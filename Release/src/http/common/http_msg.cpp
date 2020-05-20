@@ -276,9 +276,9 @@ std::string http_version::to_utf8string() const
     std::string ret;
     ret.reserve(8);
     ret.append("HTTP/");
-    ret.append(std::to_string(static_cast<unsigned int>(major)));
+    ret.append(utility::conversions::details::to_string_t(static_cast<unsigned int>(major)));
     ret.append(".");
-    ret.append(std::to_string(static_cast<unsigned int>(minor)));
+    ret.append(utility::conversions::details::to_string_t(static_cast<unsigned int>(minor)));
     return ret;
 }
 

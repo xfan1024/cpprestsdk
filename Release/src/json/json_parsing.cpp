@@ -49,9 +49,9 @@ __declspec(noreturn)
     void CreateException(const Token& tk, const utility::string_t& message)
 {
     std::string str("* Line ");
-    str += std::to_string(tk.start.m_line);
+    str += utility::conversions::details::to_string_t(tk.start.m_line);
     str += ", Column ";
-    str += std::to_string(tk.start.m_column);
+    str += utility::conversions::details::to_string_t(tk.start.m_column);
     str += " Syntax error: ";
     str += utility::conversions::to_utf8string(message);
     throw web::json::json_exception(std::move(str));
